@@ -1,0 +1,12 @@
+---
+- hosts: nexus
+  gather_facts: false
+  become: yes
+  become_method: sudo
+  vars_files:
+    - roles/nexus-server/vars/main.yml
+  handlers:
+    - include: roles/nexus-server/handlers/main.yml
+  roles:
+    - role: roles/nexus-server
+
